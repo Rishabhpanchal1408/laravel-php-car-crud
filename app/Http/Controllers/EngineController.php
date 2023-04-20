@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class EngineController extends Controller
 {
+    //    To get All 
     public function index()
     {
         return view('engine.index', [
@@ -14,11 +15,13 @@ class EngineController extends Controller
         ]);
     }
 
+    //    To Create 
     public function create()
     {
         return view('engine.create');
     }
 
+    // To Store 
     public function store(Request $request)
     {
         $formFields = $request->validate([
@@ -28,17 +31,13 @@ class EngineController extends Controller
         Engine::create($formFields);
         return redirect('/engine')->with('message', ['Engine', ' Added Successfully!']);
     }
-
-    public function destroy(Engine $engine)
-    {
-        $engine->delete();
-        return redirect('/engine')->with('message', ['Engine', ' Deleted Successfully!']);
-    }
-
+    // To Edit
     public function edit(Engine $engine)
     {
         return view('engine.edit', ['engine' => $engine]);
     }
+
+    // To Update
     public function update(Request $request, Engine $engine)
     {
         $formFields = $request->validate([
@@ -47,5 +46,11 @@ class EngineController extends Controller
 
         $engine->update($formFields);
         return redirect('/engine')->with('message', ['Engine', ' Updated Successfully!']);
+    }
+    // To Delete
+    public function destroy(Engine $engine)
+    {
+        $engine->delete();
+        return redirect('/engine')->with('message', ['Engine', ' Deleted Successfully!']);
     }
 }
