@@ -6,7 +6,6 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\EngineController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TypeController;
-use App\Models\Type;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +21,23 @@ use Illuminate\Support\Facades\Route;
 
 // Get All Car Details
 Route::get('/', [HomeController::class, 'index']);
+
+// Car
+
+// Car Get All
+Route::get('/car', [CarsController::class, 'index']);
+
+// Car Insert
+Route::get('/car/create', [CarsController::class, 'create']);
+Route::post('/car', [CarsController::class, 'store']);
+
+// Car Update
+Route::get('/car/{car}/edit', [CarsController::class, 'edit']);
+Route::put('/car/{car}', [CarsController::class, 'update']);
+
+// Car Delete
+Route::delete('/car/{car}', [CarsController::class, 'destroy']);
+
 
 // Brand
 

@@ -1,50 +1,70 @@
 @extends('layout')
 @section('data')
-    <div class="container w-50 mx-auto mt-3">
-        <form action="/car" method="POST">@csrf
-            <div>
+    <div class="container w-50 mx-auto border rounded-3 bg-light">
+        <form action="/car" method="POST">
+            @csrf
+            <div class="pt-2">
                 <label class="form-label"><b>Car Brand</b></label>
-                <input type="text" name="car_brand" class="form-control" placeholder="Enter Brand" />
+                <select name="car_brand" class="form-select" placeholder="Enter Brand">
+                    @foreach ($brands as $brand)
+                        <option value={{ $brand->brand_id }}>{{ $brand->brand_name }}</option>
+                    @endforeach
+                </select>
+
                 @error('car_brand')
                     <p class="text-danger">Filled Cannot be Empty!</p>
                 @enderror
             </div>
-            <div>
+            <div class="pt-2">
                 <label class="form-label"><b>Car Model</b></label>
                 <input type="text" name="car_model" class="form-control" placeholder="Enter Model" />
                 @error('car_model')
                     <p class="text-danger">Filled Cannot be Empty!</p>
                 @enderror
             </div>
-            <div>
+            <div class="pt-2">
                 <label class="form-label"><b>Car Color</b></label>
-                <input type="text" name="car_color" class="form-control" placeholder="Enter Color" />
+                <select name="car_color" class="form-select">
+                    @foreach ($colors as $color)
+                        <option value={{ $color->color_id }}>{{ $color->color_name }}</option>
+                    @endforeach
+                </select>
                 @error('car_color')
                     <p class="text-danger">Filled Cannot be Empty!</p>
                 @enderror
             </div>
-            <div>
+            <div class="pt-2">
                 <label class="form-label"><b>Car Engine</b></label>
-                <input type="text" name="car_enigne" class="form-control" placeholder="Enter Engine" />
+                <select name="car_engine" class="form-select">
+                    @foreach ($engines as $engine)
+                        <option value={{ $engine->engine_id }}>{{ $engine->engine_name }}</option>
+                    @endforeach
+                </select>
                 @error('car_enigne')
                     <p class="text-danger">Filled Cannot be Empty!</p>
                 @enderror
             </div>
-            <div>
+            <div class="pt-2">
                 <label class="form-label"><b>Car Type</b></label>
-                <input type="text" name="car_type" class="form-control" placeholder="Enter Type" />
+                <select name="car_type" class="form-select">
+                    @foreach ($types as $type)
+                        <option value={{ $type->type_id }}>{{ $type->type_name }}</option>
+                    @endforeach
+                </select>
                 @error('car_type')
                     <p class="text-danger">Filled Cannot be Empty!</p>
                 @enderror
             </div>
-            <div>
+            <div class="pt-2">
                 <label class="form-label"><b>Car Price</b></label>
                 <input type="text" name="car_price" class="form-control" placeholder="Enter Price" />
                 @error('car_price')
                     <p class="text-danger">Filled Cannot be Empty!</p>
                 @enderror
             </div>
-            <input type="submit" class="btn btn-primary mt-2" />
+            <div class="d-grid pt-2 pb-2">
+                <input type="submit" class="btn btn-primary mt-2" />
+            </div>
         </form>
     </div>
 @endsection
