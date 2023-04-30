@@ -10,6 +10,7 @@
                     <th>Car Color</th>
                     <th>Car Engine</th>
                     <th>Car Type</th>
+                    <th>Car Img</th>
                     <th>Car Price</th>
                     <th>Actions</th>
                 </tr>
@@ -23,7 +24,11 @@
                         <td>{{ $car->color->color_name }}</td>
                         <td>{{ $car->engine->engine_name }}</td>
                         <td>{{ $car->type->type_name }}</td>
-                        <td>{{ $car->car_price }}</td>
+                        <td>
+                            <img src={{ asset('storage/' . $car->car_img) }} alt="" style="width:100px"
+                                class="d-block mx-auto">
+                        </td>
+                        <td>₹{{ $car->car_price }}</td>
                         <td class="d-flex justify-content-around">
                             <a href="/car/{{ $car->car_id }}/edit" class="btn btn-primary">
                                 <i class="fa-solid fa-pen-to-square"></i>

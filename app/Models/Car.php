@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class Car extends Model
 {
-    protected $fillable = ['car_brand', 'car_model', 'car_engine', 'car_color', 'car_type', 'car_price'];
+    protected $fillable = ['car_brand', 'car_model', 'car_engine', 'car_color', 'car_type', 'car_price', 'car_img'];
     protected $table = 'car_tbl';
     public $timestamps = false;
     protected $primaryKey = 'car_id';

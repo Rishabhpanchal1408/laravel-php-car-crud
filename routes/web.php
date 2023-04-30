@@ -21,14 +21,14 @@ use Illuminate\Support\Facades\Route;
 
 // Get All Car Details
 Route::get('/', [HomeController::class, 'index']);
-
 // Car
-
 // Car Get All
 Route::get('/car', [CarsController::class, 'index']);
 
 // Car Insert
 Route::get('/car/create', [CarsController::class, 'create']);
+// Car Get Single
+Route::get('/car/{car}', [CarsController::class, 'show']);
 Route::post('/car', [CarsController::class, 'store']);
 
 // Car Update

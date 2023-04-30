@@ -1,7 +1,7 @@
 @extends('layout')
 @section('data')
     <div class="container w-50 mx-auto border rounded-3 bg-light">
-        <form action="/car" method="POST">
+        <form action="/car" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="pt-2">
                 <label class="form-label"><b>Car Brand</b></label>
@@ -51,6 +51,13 @@
                         <option value={{ $type->type_id }}>{{ $type->type_name }}</option>
                     @endforeach
                 </select>
+                @error('car_type')
+                    <p class="text-danger">Filled Cannot be Empty!</p>
+                @enderror
+            </div>
+            <div class="pt-2">
+                <label class="form-label"><b>Car Img</b></label>
+                <input type="file" class="form-control" name="car_img">
                 @error('car_type')
                     <p class="text-danger">Filled Cannot be Empty!</p>
                 @enderror

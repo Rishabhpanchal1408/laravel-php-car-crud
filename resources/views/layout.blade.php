@@ -47,30 +47,31 @@
             transform: matrix(1, 5, 1, 1, -100, 0);
             background: #ffffff;
         }
-
-        #shadow {
-            box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.75);
-        }
     </style>
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/"><i class="fa-solid fa-car fa-lg" style="color: #1f3e8d;"></i> </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top border ">
+        <div class="container-fluid ">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-
+            <div class="collapse navbar-collapse gap-5" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-center"
+                    style="--bs-scroll-height: 100px;">
+                    <!-- Logo -->
+                    <a href="/" class="navbar-brand">
+                        <img height="50px"
+                            src="https://webkinznewz.ganzworld.com/wp-content/uploads/2017/05/McQueen.png"
+                            style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; text-align: center">
+                    </a>
                     <!-- Car -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarScrollingDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Car
+                            CAR
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/car">View Cars</a></li>
@@ -82,8 +83,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarScrollingDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Brand
-                        </a>
+                            BRAND </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/brand">View Brands</a></li>
                             <li><a class="dropdown-item" href="/brand/create">Create Brand</a></li>
@@ -94,7 +94,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarScrollingDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Color
+                            COLOR
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/color">View Colors</a></li>
@@ -106,7 +106,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarScrollingDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Engine
+                            ENGINE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/engine">View Engines</a></li>
@@ -118,7 +118,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarScrollingDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Type
+                            TYPE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/type">View Types</a></li>
@@ -127,10 +127,14 @@
                     </li>
 
                 </ul>
-                <form class="d-flex">
+                <!-- Login / Register -->
+                <form class="d-flex flex-grow-1 align-self-center">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
+                <ul class="navbar-nav me-auto my-2 ">
+                    <li class="nav-item"><i class="fa-solid fa-user"></i> Login / Register</li>
+                </ul>
             </div>
         </div>
     </nav>

@@ -18,6 +18,12 @@ class CarsController extends Controller
             'car' => Car::orderBy('car_id')->get()
         ]);
     }
+    public function show(Car $car)
+    {
+        return view('car.show', [
+            'car' => $car
+        ]);
+    }
 
     public function create()
     {
@@ -38,6 +44,8 @@ class CarsController extends Controller
             'car_type' => 'required',
             'car_price' => 'required'
         ]);
+
+        $formFields['car_img'] = $request->file('car_img')->store('car', 'public');
 
         Car::create($formFields);
 
@@ -66,6 +74,10 @@ class CarsController extends Controller
             'car_type' => 'required',
             'car_price' => 'required'
         ]);
+
+        if ($request->hasFile('car_img')) {
+            $formFields['car_img'] = $request->file('car_img')->store('car', 'public');
+        }
 
         $car->update($formFields);
 

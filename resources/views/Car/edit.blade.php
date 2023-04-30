@@ -63,6 +63,13 @@
                 @enderror
             </div>
             <div class="pt-2">
+                <label class="form-label"><b>Car Img</b></label>
+                <input type="file" class="form-control" name="car_img" value={{ $car->car_img }}>
+                @error('car_type')
+                    <p class="text-danger">Filled Cannot be Empty!</p>
+                @enderror
+            </div>
+            <div class="pt-2">
                 <label class="form-label"><b>Car Price</b></label>
                 <input type="text" name="car_price" class="form-control" placeholder="Enter Price"
                     value={{ $car->car_price }} />
